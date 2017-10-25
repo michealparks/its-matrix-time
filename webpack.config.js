@@ -28,19 +28,9 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          plugins: [
-            ["transform-react-jsx", {
-              "pragma": "h"
-            }]
-          ]
+          plugins: [["transform-react-jsx", {"pragma": "h"}]]
         }
       }
     ]
-  },
-  resolve: {
-    alias: {
-      "react": "preact-compat",
-      "react-dom": "preact-compat"
-    }
   }
 }
