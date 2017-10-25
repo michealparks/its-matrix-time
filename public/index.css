@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  cursor: default;
+}
+
+*:not(input) {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body, input {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+input {
+  border: 0;
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+
+.matrices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.matrix {
+  padding: 20px 0;
+}
+
+.mult {
+  padding: 5px;
+}
+
+.equals {
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.entry {
+  width: 60px;
+  height: 60px;
+  background-color: #eee;
+  margin: 2px;
+  line-height: 60px;
+}
+
+.entry, .entry input {
+  text-align: center;
+  font-size: 18px;
+}
+
+.entry input {
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+}
