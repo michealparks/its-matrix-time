@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   cursor: default;
+  outline: none;
 }
 
 *:not(input) {
@@ -23,17 +24,25 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin: 0; 
+  margin: 0;
 }
 
-.matrices {
+.app {
+  height: 100%;
+}
+
+.app, .matrices, .multiplicands {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .matrix {
-  padding: 20px 0;
+  padding: 8px;
+}
+
+.matrix, .matrix *:not(input) {
+  cursor: move;
 }
 
 .mult {

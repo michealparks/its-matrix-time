@@ -14,7 +14,7 @@ class Matrix extends Component {
   }
 
   render ({values}) {
-    return <div class='matrix'>
+    return <div>
       {values.map((row, i) =>
         <div key={i} class={`row row-${i}`}>
           {row.map((val, j) =>
@@ -22,6 +22,7 @@ class Matrix extends Component {
               <input
                 type='number'
                 value={val}
+                onMouseDown={e => e.stopPropagation()}
                 onKeyUp={this.onChange.bind(this, i, j)}
                 onBlur={(e) => {
                   if (e.currentTarget.value !== '') return

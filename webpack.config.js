@@ -3,8 +3,6 @@ const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const env = process.env.NODE_ENV
 
-console.log(env)
-
 module.exports = {
   entry: './app/index.js',
   output: {
@@ -16,10 +14,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(env || 'development')
     })
   ].concat(env === 'production' ? new UglifyJSPlugin({
-    uglifyOptions: {
-      ie8: false,
-      ecma: 6
-    }
+    uglifyOptions: {ie8: false, ecma: 6}
   }) : []),
   module: {
     loaders: [
@@ -32,5 +27,11 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
   }
 }

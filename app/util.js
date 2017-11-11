@@ -21,8 +21,8 @@ function emptyMatrix (m, n) {
 function identityMatrix (n) {
   const matrix = emptyMatrix(n, n)
 
-  for (let i = 0, j = 0, l = matrix.length; i < l; ++i, ++j) {
-    matrix[i][j] = 1
+  for (let i = 0, l = matrix.length; i < l; ++i) {
+    matrix[i][i] = 1
   }
 
   return matrix
@@ -41,7 +41,13 @@ function randomMatrix (m, n, max, min) {
 }
 
 function multiply (matrices) {
-  return multiplyTwo(matrices[0], matrices[1])
+  let result = multiplyTwo(matrices[0], matrices[1])
+
+  for (let i = 2, l = matrices.length; i < l; ++i) {
+    result = multiplyTwo(result, matrices[i])
+  }
+
+  return result
 }
 
 function multiplyTwo (a, b) {
